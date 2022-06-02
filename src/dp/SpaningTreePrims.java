@@ -11,11 +11,52 @@ public class SpaningTreePrims {
         { 6, 8, 0, 0, 9 },
         { 0, 5, 7, 9, 0 } };
     SpaningTreePrims t = new SpaningTreePrims();
-    int result[] = t.minimumSpaning(graph, 0);
+   // int result[] = t.minimumSpaning(graph, 0);
+    int result[] = t.getSpan(graph);
     for (int i = 0; i < result.length; i++) {
       System.out.println("  " + result[i]);
     }
   }
+
+
+  public int[] getSpan(int [][] graph) {
+    int n=graph.length;
+    int dist[] =new int[n];
+    for(int i=0;i<n;i++) {
+      dist[i]=Integer.MAX_VALUE;
+    }
+    boolean visit[]= new boolean[n];
+    for(int i=0;i<visit.length;i++) {
+      visit[i]=false;
+    }
+    dist[0]=0;
+
+    for(int i=0;i<n;i++) {
+
+      int min=getMinimum(dist,visit);
+      System.out.print("Min Index:"+min);
+      visit[min]=true;
+      for(int j=0;j<n;j++) {
+        if(!visit[j] && graph[min][j]!=0 && graph[min][j]<dist[j]) {
+          dist[j]=graph[min][j];
+        }
+      }
+    }
+    return dist;
+  }
+
+  private int getMinimum(int[] dist, boolean[] visit) {
+    int minIndex=-1;
+    int min=Integer.MAX_VALUE;
+    for(int i=0;i<dist.length;i++) {
+      if(dist[i]<min && !visit[i]) {
+        min=dist[i];
+        minIndex=i;
+      }
+    }
+    return minIndex;
+  }
+
 
   private int[] minimumSpaning(int[][] graph, int s) {
     int V = graph.length;

@@ -35,9 +35,46 @@ public class BinaryTree {
     //binaryTree.preOrderTravel(root);
     //binaryTree.inorderTravel(root);
     binaryTree.postTrevaler(root);
-    binaryTree.levelTravel(root);
-    int maxValue= binaryTree.findMax(root);
-    System.out.println("FindMax:"+maxValue);
+    //binaryTree.levelTravel(root);
+    int maxValue = binaryTree.findMax(root);
+    System.out.println("FindMax:" + maxValue);
+    TreeNode deleteRoot=binaryTree.deleteKey(root, 4);
+    binaryTree.levelTravel(deleteRoot);
+  }
+
+  private TreeNode deleteKey(TreeNode root, int key) {
+
+    if (root == null) {
+      return null;
+    }
+    if (key < root.key) {
+      root.left=deleteKey(root.left, key);
+    } else if (key > root.key) {
+     root.right= deleteKey(root.right, key);
+    } else {
+      if(root.left==null) {
+        return root.right;
+      }
+      if(root.right==null) {
+        return root.left;
+      }
+      TreeNode min = findMin(root);
+      root.key=min.key;
+      root.right = deleteKey(root.right,min.key);
+    }
+    return  root;
+
+  }
+
+  private TreeNode findMin(TreeNode root) {
+
+    if (root.left == null) {
+      return null;
+    }
+    while (root.left!=null) {
+      root=root.left;
+    }
+    return root;
   }
 
   public void preOrderTravel(TreeNode root) {
@@ -114,7 +151,7 @@ public class BinaryTree {
 
   public void levelTravel(TreeNode root) {
     List<List<TreeNode>> listList = new ArrayList<>();
-    List<TreeNode> list=new ArrayList<>();
+    List<TreeNode> list = new ArrayList<>();
     Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);
     queue.add(null);
@@ -128,8 +165,8 @@ public class BinaryTree {
           queue.add(curr.right);
         }
         list.add(curr);
-      } else  {
-        if(!queue.isEmpty()) {
+      } else {
+        if (!queue.isEmpty()) {
           queue.add(null);
         }
         print(list);
@@ -140,22 +177,23 @@ public class BinaryTree {
 
   private void print(List<TreeNode> list) {
     System.out.println();
-    for(TreeNode node:list) {
-      System.out.print(" "+node.key);
+    for (TreeNode node : list) {
+      System.out.print(" " + node.key);
     }
   }
 
   public int findMax(TreeNode root) {
-    if(root==null)
+    if (root == null) {
       return Integer.MIN_VALUE;
-    int res=root.key;
-    int letMax=findMax(root.left);
-    int rightMax=findMax(root.right);
-    if(res<letMax) {
-      res=letMax;
     }
-    if(res<rightMax) {
-      res=rightMax;
+    int res = root.key;
+    int letMax = findMax(root.left);
+    int rightMax = findMax(root.right);
+    if (res < letMax) {
+      res = letMax;
+    }
+    if (res < rightMax) {
+      res = rightMax;
     }
     return res;
   }
