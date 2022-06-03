@@ -1,7 +1,7 @@
 package tree;
 
 public class AllPathOfTree {
-
+// time complexity O(n)
   public static void main(String[] args) {
     TreeNode root = new TreeNode(1);
     TreeNode one = new TreeNode(2);

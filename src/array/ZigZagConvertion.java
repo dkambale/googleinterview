@@ -3,7 +3,7 @@ package array;
 import java.util.Arrays;
 
 public class ZigZagConvertion {
-
+// o(n) time complexity.
   public static void main(String[] args) {
     String str = "GEEKSFORGEEKS";
     int n = 3;

@@ -60,7 +60,7 @@ public class BinaryTree {
       }
       TreeNode min = findMin(root);
       root.key=min.key;
-      root.right = deleteKey(root.right,min.key);
+      root.right = deleteKey(root.left,min.key);
     }
     return  root;
 

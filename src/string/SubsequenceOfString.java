@@ -3,7 +3,7 @@ package string;
 import java.util.Map;
 
 public class SubsequenceOfString {
-
+// log complexity 2^n
   public static void main(String[] args) {
     String ss="abc";
     printAllSubsequence(ss ,"");

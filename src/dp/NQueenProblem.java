@@ -5,6 +5,8 @@ backtracking */
 public class NQueenProblem {
   final int N = 4;
 
+  //time complexity is O(N ^2); due to matrix
+
   /* A utility function to print solution */
   void printSolution(int board[][])
   {

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BalancedBinaryTree {
-
+// O(n)
   public static void main(String[] args) {
 
     TreeNode root = new TreeNode(1);

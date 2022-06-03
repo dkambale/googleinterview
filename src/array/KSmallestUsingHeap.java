@@ -1,7 +1,7 @@
 package array;
 
 public class KSmallestUsingHeap {
-
+// Time complexity: O(n + kLogn).
   public class Heap {
     int val[];
     int size;

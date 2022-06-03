@@ -3,7 +3,7 @@ package array;
 import java.util.Arrays;
 
 public class LongestCommonPrefix {
-
+// Time Complexity: O(MAX *    n * log n )
   public static void main(String[] args) {
 
     String[] input = {"geeksforgeeks", "geeks", "geek", "geezer"};

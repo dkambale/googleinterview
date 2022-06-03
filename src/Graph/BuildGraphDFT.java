@@ -3,7 +3,7 @@ package Graph;
 import java.util.Stack;
 
 public class BuildGraphDFT {
-
+// O(V + E),
   Graph graph = new Graph();
 
   public static void main(String[] args) {

@@ -51,7 +51,7 @@ public class KMP_String_Matching {
     int l = 0;
     pre[0] = l;
     int i = 1;
-    for (; i < pat.length(); i++) {
+    for (; i < pat.length(); ) {
       if (pre[i] == pat.charAt(l)) {
         l++;
         pre[i] = l;

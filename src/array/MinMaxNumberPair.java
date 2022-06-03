@@ -1,7 +1,7 @@
 package array;
 
 public class MinMaxNumberPair {
-
+// Time Complexity: O(n)
   private Pair pair;
 
   private static class Pair {

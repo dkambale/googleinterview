@@ -1,7 +1,7 @@
 package array;
 
 public class IslandCount {
-
+//O(ROW x COL)
 public static int col=0;
   public static int row=0;
   public static void main(String[] args) throws java.lang.Exception {

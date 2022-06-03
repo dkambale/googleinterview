@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class SubSequenceArray {
 
+  // time complexity 2^n
   public static void main(String[] args) {
 
     int a[] = {1,2,3};

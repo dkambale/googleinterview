@@ -6,6 +6,8 @@ import java.util.PriorityQueue;
 
 public class AdjencyListDijkstra {
 
+  // from source to destination(each) node how much time requires ?
+  // ElogV
   static class AdjListNode {
 
     int vertex, weight;

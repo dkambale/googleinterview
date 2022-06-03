@@ -2,6 +2,7 @@ package array;
 
 public class SortPositiveNegative {
 
+  // n/2 time complexity
   public static void main(String[] args) {
     int arr[] = { 1, 10, 2, -10, -20 };
     int s=0;

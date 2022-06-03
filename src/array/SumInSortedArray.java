@@ -2,6 +2,7 @@ package array;
 
 public class SumInSortedArray {
 
+  // time complexity is n/2
   public static void main(String[] args) {
     int a[] = {6, 7, 9, 10,11, 15};
 

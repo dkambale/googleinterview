@@ -2,7 +2,7 @@ package dp;
 
 public class Dijkstra {
 
-
+//  O(V^2)
   public static void main(String[] args) {
     /* Let us create the example graph discussed above */
     int graph[][] = new int[][]{{0, 4, 0, 0, 0, 0, 0, 8, 0},

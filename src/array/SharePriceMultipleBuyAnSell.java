@@ -6,6 +6,7 @@ import tree.TreeNode;
 
 public class SharePriceMultipleBuyAnSell {
 
+  // time complexity o(n)
 
   public static void main(String[] args) {
     int[] ss = {3, 5, 1, 7, 4, 9, 3};

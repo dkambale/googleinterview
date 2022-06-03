@@ -19,7 +19,7 @@ public class KMP_String_Matching {
   private static void matchFound(String text, String pat, List<Integer> allMacthedIndex) {
 
     int[] pre = new int[pat.length()];
-    lps(pre, pat);
+    computeLPSArray(pat,pat.length(),pre);
     System.out.println(pre);
     int j = 0;
     int i = 0;
@@ -30,9 +30,9 @@ public class KMP_String_Matching {
         i++;
       }
       if (i == pat.length()) {
-        System.out.println("Found matching:" + j);
+        System.out.println("Found matching:" + (j-i));
         i = pre[i - 1];
-        allMacthedIndex.add(j);
+        allMacthedIndex.add(j-i);
       } else if (j < text.length() && text.charAt(j) != pat.charAt(i)) {
         if (i != 0) {
           i = pre[i - 1];
@@ -46,21 +46,34 @@ public class KMP_String_Matching {
 
   }
 
-  private static void lps(int[] pre, String pat) {
-
-    int l = 0;
-    pre[0] = l;
+  static void computeLPSArray(String pat, int M, int lps[])
+  {
+    // length of the previous longest prefix suffix
+    int len = 0;
     int i = 1;
-    for (; i < pat.length(); i++) {
-      if (pre[i] == pat.charAt(l)) {
-        l++;
-        pre[i] = l;
+    lps[0] = 0; // lps[0] is always 0
+
+    // the loop calculates lps[i] for i = 1 to M-1
+    while (i < M) {
+      if (pat.charAt(i) == pat.charAt(len)) {
+        len++;
+        lps[i] = len;
         i++;
-      } else {
-        if (l != 0) {
-          pre[i] = pre[l - 1];
-        } else {
-          pre[i] = l;
+      }
+      else // (pat[i] != pat[len])
+      {
+        // This is tricky. Consider the example.
+        // AAACAAAA and i = 7. The idea is similar
+        // to search step.
+        if (len != 0) {
+          len = lps[len - 1];
+
+          // Also, note that we do not increment
+          // i here
+        }
+        else // if (len == 0)
+        {
+          lps[i] = len;
           i++;
         }
       }

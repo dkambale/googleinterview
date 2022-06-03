@@ -2,6 +2,7 @@ package array;
 
 public class SearchInRotatedArray {
 
+ // time complexcity O(log(n))
 
   public static void main(String[] args) {
     // Let us search 3 in below array

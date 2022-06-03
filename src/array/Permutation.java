@@ -1,7 +1,7 @@
 package array;
 
 public class Permutation {
-
+// time complexity n!
   public static void main(String[] args) {
     String str = "ABC";
     int n = str.length();

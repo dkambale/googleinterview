@@ -1,7 +1,7 @@
 package array;
 
 public class MinimumPathSum {
-
+//time complexity its visiting each and every node hence O(m * n)
   public static void main(String[] args) {
     int cost[][] = { {1,3,1},
         {1,5,1},

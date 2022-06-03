@@ -1,7 +1,7 @@
 package dp;
 
 public class KnapSackOneZero {
-  // Driver code
+  //  Time Complexity: O(2n).
   public static void main(String args[])
   {
     int val[] = new int[] { 60, 100, 120 };

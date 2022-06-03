@@ -2,6 +2,7 @@ package array;
 
 public class PerfectSumProblem {
 
+  // time complexcity 2^n
   private static int count;
   private static int n;
   private static int sum;

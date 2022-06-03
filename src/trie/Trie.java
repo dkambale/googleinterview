@@ -4,6 +4,7 @@ import tree.TreeNode;
 
 public class Trie {
 
+  // time complexity M * log N
   TrieNode root=new TrieNode();
   static class TrieNode {
 

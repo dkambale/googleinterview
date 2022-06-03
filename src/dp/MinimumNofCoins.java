@@ -5,6 +5,7 @@ import java.util.List;
 
 public class MinimumNofCoins {
 
+  // o(n)
   public static void main(String[] args) {
 
      int demo[] = {1, 2, 5, 10, 20,

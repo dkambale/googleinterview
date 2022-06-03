@@ -3,6 +3,7 @@ package array;
 public class MaximumSumSubArray {
 
   // kadanes algo
+  // time complexity O(n)
   public static void main(String[] args) {
     int arr1[] = {4, 1, 1, -1, -3, -5, 6, 2, -6, -2};
     int k = 3;

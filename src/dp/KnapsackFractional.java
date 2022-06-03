@@ -5,7 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class KnapsackFractional {
-
+//O(n log n) time complexity
+  // ItemValue (value,wieght,cost) implements compator and use weight
   public static void main(String[] args) {
     int[] wt = {10, 40, 20, 30};
     int[] val = {60, 40, 100, 120};

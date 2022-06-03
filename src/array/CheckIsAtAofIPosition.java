@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class CheckIsAtAofIPosition {
-
+  // o(n)logn
   public static void main(String[] args) {
     int A[] = {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
 

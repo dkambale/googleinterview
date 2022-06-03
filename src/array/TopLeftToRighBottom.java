@@ -5,6 +5,7 @@ import java.util.List;
 
 public class TopLeftToRighBottom {
 
+  // O(mn).
   public static void main(String[] args) {
     int m = 2;
     int n = 3;
